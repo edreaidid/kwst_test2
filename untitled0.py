@@ -93,7 +93,7 @@ with placeholder_for_optional_text:
         selection2=False
         selection4=False
         st.write("Terima kasih kerana menggunaan aplikasi ini")
-        switch_page("recognition")
+        
     if selection == "bukan":
         selection3=False
         selection2=False
