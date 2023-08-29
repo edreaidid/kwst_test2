@@ -59,7 +59,7 @@ if op == 'others':
 # Layout for the form 
 with st.form("myform",clear_on_submit=True):
 
-    "### KWS Triager"
+    "### Saringan Literasi Kesihatan Mental"
     
     kuala_lumpur=pytz.timezone('Asia/Kuala_Lumpur')
     now=dt.datetime.now()
@@ -93,11 +93,13 @@ with placeholder_for_optional_text:
         selection2=False
         selection4=False
         st.write("Terima kasih kerana menggunaan aplikasi ini")
+        switch_page("recognition")
     if selection == "bukan":
         selection3=False
         selection2=False
         selection4=False
-        st.write("sila pergi ke ETD SASMEC atau fasiliti kesihatan yang lain")    
+        st.write("sila pergi ke ETD SASMEC atau fasiliti kesihatan yang lain") 
+        switch_page("recognition")
 
 # dependent screening
 with kategori_dependent:
@@ -112,15 +114,18 @@ with kategori_dependent:
                     if selection2 == "ayah/emak/suami/isteri" or selection2 == "anak kurang 18 tahun" or selection2 =="pelajar kurang 21 tahun":
                         selection3=False
                         st.write (["kesukaran bernafas", "sakit dada","pitam", "kesakitan melampau"])
+                        switch_page("firstaid")
                 with gejala_tidak_sesuai:
                     if selection4 == "ya":
                         st.write("sila pergi ke ETD SASMEC atau fasili kesihatan berdekatan")
+                        switch_page("firstaid")
                 
         with bukan_dependent_sesuai:
             if selection2 == "tiada dalam senarai":
                 selection3=False
                 selection4=False
                 st.write("sila pergi ke ETD SASMEC atau fasili kesihatan berdekatan")
+                switch_page("intervention")
 
 # staff screening
 
@@ -136,6 +141,7 @@ with senarai_gejala2:
                 with gejala_tidak_sesuai2:
                     if selection3 == "ya":
                         st.write("sila pergi ke ETD SASMEC atau fasili kesihatan berdekatan")
+                        switch_page("prevention")
            
 def form_callback(data1, data2, data3, data4, data5):    
     with open('kwst.csv', 'a+') as f:    #Append & read mode
