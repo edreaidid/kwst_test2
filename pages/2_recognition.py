@@ -29,7 +29,7 @@ op = hc.nav_bar(
     menu_definition=option_data,
     override_theme=over_theme,
     home_name='Home',
-    login_name='Logout',
+    login_name='Screening',
     hide_streamlit_markers=True, #will show the st hamburger as well as the navbar now!
     sticky_nav=True, #at the top or not
     sticky_mode='pinned', #jumpy or not-jumpy, but sticky or pinned
@@ -45,6 +45,8 @@ if op == 'prevention':
     switch_page("prevention")
 if op == 'others':
     switch_page("others")
+if op == 'Screening':
+    switch_page("untitled0")
 
 st.video("https://www.youtube.com/watch?v=KgeQwW0_T5o")
 st.write('mengenal masalah mental')
