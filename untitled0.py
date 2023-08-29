@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 import datetime as dt
 import pytz
+import time
 
 st.set_page_config(initial_sidebar_state="collapsed")
 st.markdown(
@@ -99,6 +100,7 @@ with placeholder_for_optional_text:
         selection2=False
         selection4=False
         st.write("sila pergi ke ETD SASMEC atau fasiliti kesihatan yang lain") 
+        time.sleep(3)
         switch_page("recognition")
 
 # dependent screening
@@ -114,10 +116,10 @@ with kategori_dependent:
                     if selection2 == "ayah/emak/suami/isteri" or selection2 == "anak kurang 18 tahun" or selection2 =="pelajar kurang 21 tahun":
                         selection3=False
                         st.write (["kesukaran bernafas", "sakit dada","pitam", "kesakitan melampau"])
-                        switch_page("firstaid")
                 with gejala_tidak_sesuai:
                     if selection4 == "ya":
                         st.write("sila pergi ke ETD SASMEC atau fasili kesihatan berdekatan")
+                        time.sleep(3)
                         switch_page("firstaid")
                 
         with bukan_dependent_sesuai:
@@ -125,6 +127,7 @@ with kategori_dependent:
                 selection3=False
                 selection4=False
                 st.write("sila pergi ke ETD SASMEC atau fasili kesihatan berdekatan")
+                time.sleep(3)
                 switch_page("intervention")
 
 # staff screening
@@ -141,6 +144,7 @@ with senarai_gejala2:
                 with gejala_tidak_sesuai2:
                     if selection3 == "ya":
                         st.write("sila pergi ke ETD SASMEC atau fasili kesihatan berdekatan")
+                        time.sleep(3)
                         switch_page("prevention")
            
 def form_callback(data1, data2, data3, data4, data5):    
