@@ -27,11 +27,11 @@ from streamlit_extras.switch_page_button import switch_page
 
 # define what option labels and icons to display
 option_data = [         
-   {'icon': "bi bi-hand-thumbs-up", 'label':"SOP"},
-   {'icon':"fa fa-question-circle",'label':"chatbot"},
-   {'icon': "far fa-chart-bar", 'label':"triager"},
-   {'icon': "fa fa-unlock-alt", 'label':"admin"},
-   {'icon':"fas fa-robot", 'label':"AI prediction"}
+   {'icon': "bi bi-hand-thumbs-up", 'label':"recognition"},
+   {'icon':"fa fa-question-circle",'label':"firstaid"},
+   {'icon': "far fa-chart-bar", 'label':"intervention"},
+   {'icon': "fa fa-unlock-alt", 'label':"prevention"},
+   {'icon':"fas fa-robot", 'label':"others"}
 ]
 
 over_theme = {'txc_inactive': 'white','menu_background':'#0b6b66','txc_active':'black','option_active':'white'}
@@ -45,16 +45,16 @@ op = hc.nav_bar(
     sticky_mode='pinned', #jumpy or not-jumpy, but sticky or pinned
 )
 
-if op == "SOP": 
-    switch_page("SOP")
-if op == "chatbot":
-    switch_page("triagingappv1")
-if op == "admin":
-    switch_page("admin")
-if op == 'Logout':
-    switch_page("maintriager")
-if op == 'AI prediction':
-    switch_page("triageml")
+if op == "recognition": 
+    switch_page("recognition")
+if op == "firstaid":
+    switch_page("firstaid")
+if op == "intervention":
+    switch_page("intervention")
+if op == 'prevention':
+    switch_page("prevention")
+if op == 'others':
+    switch_page("others")
 
 # Layout for the form 
 with st.form("myform",clear_on_submit=True):
