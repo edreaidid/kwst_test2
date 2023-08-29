@@ -144,12 +144,7 @@ def form_callback(data1, data2, data3, data4, data5):
 if x:
     form_callback(selection,selection3,selection2,selection4,live_datetime)
 
-with st.sidebar:
-    st.info(" #### Admin monitoring :point_down:")
-    password = st.text_input("Enter a password", value="", type="password")
-    if password=="abcd":
-        st.dataframe(pd.read_csv("kwst.csv",names=["staf sasmec","bergejala", "ahli staf", "ahli bergejala", "masa"]),height=300)
-      
+
 
 
 
