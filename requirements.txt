@@ -3,5 +3,5 @@ pandas
 datetime
 pytz
 hydralit_components
-streamlit-extras
+streamlit-extras==0.2.7
 time
